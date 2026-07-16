@@ -11,7 +11,26 @@ other person.
 - **Backend**: Express + TypeScript (`backend/`)
 - **AI**: OpenAI Whisper for transcription, Anthropic Claude for translation
 
-## Setup
+## Deploy to Render (get a public web link, no coding required)
+
+This repo includes a `render.yaml` blueprint, so Render can set up the whole
+app — frontend and backend together as one web service — from a few clicks.
+
+1. Get an [Anthropic API key](https://console.anthropic.com) and an
+   [OpenAI API key](https://platform.openai.com/api-keys). Both are pay-as-you-go.
+2. Go to [render.com](https://render.com) and sign up (free, no credit card needed).
+3. Click **New** → **Blueprint**, connect your GitHub account, and pick this
+   repository and the `claude/punjabi-english-voice-translator-lhom4j` branch.
+4. Render reads `render.yaml` automatically and asks you to paste in
+   `ANTHROPIC_API_KEY` and `OPENAI_API_KEY` — paste the two keys from step 1.
+5. Click **Apply** / **Deploy**. After a few minutes you'll get a public URL
+   like `https://punjabi-english-voice-translator.onrender.com` — open that
+   on any phone or computer's browser.
+
+Free-tier services "sleep" after 15 minutes of no traffic and take ~30-50
+seconds to wake up on the next visit — normal for the free plan.
+
+## Local setup (for development)
 
 ### Backend
 

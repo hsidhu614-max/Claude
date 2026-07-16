@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: punjabi-english-voice-translator
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: NODE_VERSION
+        value: 22
